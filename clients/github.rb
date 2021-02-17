@@ -1,4 +1,5 @@
 require "faraday"
+require_relative "../mappers/github_repository_mapper"
 
 class Github
   API_URL = ENV["GITHUB_API_URL"]

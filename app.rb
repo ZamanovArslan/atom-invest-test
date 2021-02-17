@@ -1,9 +1,7 @@
 require "sinatra"
 require "sinatra/reloader" if development?
-require "byebug"
 require "dotenv/load"
 require_relative "clients/github"
-require_relative "mappers/github_repository_mapper"
 
 configure {set :server, :puma}
 

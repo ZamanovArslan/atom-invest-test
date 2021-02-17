@@ -1,5 +1,9 @@
 require "webmock/rspec"
 require "dotenv/load"
+require "capybara/rspec"
+require_relative "../app"
+
+Capybara.app = Sinatra::Application.new
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -11,4 +15,6 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.include Capybara
 end
