@@ -6,7 +6,9 @@ class Github
   def self.search_repositories(query)
     response = send_request("search/repositories", { q: query })
 
-    response["items"]
+    response["items"].map do |repository|
+      GithubRepositoryMapper.new repository
+    end
   end
 
   def self.send_request(path, params = {})

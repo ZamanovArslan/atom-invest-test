@@ -2,11 +2,11 @@
   <%- @repositories.each do |repository| %>
   <div class="col-md-3">
     <div class="card m-3">
-      <img src="<%= repository.owner["avatar_url"] %>" class="card-img-top" alt="...">
+      <img src="<%= repository.image_url %>" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><%= repository.full_name %></h5>
         <p class="card-text"><%= repository.description %></p>
-        <a href="<%= repository.html_url %>" target="_blank" class="btn btn-primary">Show</a>
+        <a href="<%= repository.url %>" target="_blank" class="btn btn-primary">Show</a>
       </div>
     </div>
   </div>
